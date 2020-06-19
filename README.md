@@ -1,4 +1,7 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+currently just a basic react app that has a products list, an about page, and a live webcam view.
+
+will be working to continue replace base app template to a live deconvulutional view of your webcam 
+
 
 ## Available Scripts
 
