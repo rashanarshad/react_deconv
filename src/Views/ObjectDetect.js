@@ -43,8 +43,8 @@ function DeConvCam() {
   };
   return (
     <div className="text-center flex flex-col grid">
-      <h1 className="font-bold text-2xl mb-3">DeConvCam</h1>
-      <p>deconvulational view of live webcam</p>
+      <h1 className="font-bold text-2xl mb-3">Object Detection</h1>
+      <p>object detection view of live webcam</p>
       <div className="flex">
         <div className="w-1/2">
           <Cam onCapture={changeImage} />
