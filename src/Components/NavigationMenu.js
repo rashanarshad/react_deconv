@@ -28,6 +28,16 @@ function NavigationMenu(props) {
         </li>
         <li>
           <Link
+            to="/objectdetect"
+            className="text-blue-500 py-3 border-b block"
+            onClick={props.closeMenu}
+          >
+            {" "}
+            Object Detection{" "}
+          </Link>
+        </li>
+        <li>
+          <Link
             to="/about"
             className="text-blue-500 py-3 border-b block"
             onClick={props.closeMenu}

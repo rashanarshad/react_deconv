@@ -1,13 +1,20 @@
 import React, { useState } from "react";
 import FormData from "form-data";
 import axios from "axios";
+import Loader from "../Components/Loader";
 
 function DeConvImg(props) {
-  // const [src, setSrc] = useState("");
   let content = <h1 className="font-bold"> the deconvd img will go here</h1>;
   console.log(props);
-  if (props.img) {
-    content = <img src={props.img.img} />;
+  if (props.loading) {
+    content = <Loader></Loader>;
+    // content = <h1 className="font-bold"> loading</h1>;
+  }
+
+  if (!props.loading && props.img != null) {
+    content = <img src={props.img} />;
+    // setSrc(<img src={props.img.img} />);
+    // content = <h1 className="font-bold"> deconved</h1>;
     // let file = props.img.img;
     // const formData = new FormData();
     // formData.append("file", file);
@@ -29,10 +36,8 @@ function DeConvImg(props) {
     //     setSrc(response);
     //   })
     //   .catch((errors) => console.log(errors));
-  } else {
-    content = <h1 className="font-bold"> the deconvd img will go here</h1>;
   }
-  return <div>{content}</div>;
+  return content;
 }
 
 export default DeConvImg;

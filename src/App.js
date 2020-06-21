@@ -6,6 +6,8 @@ import Home from "./Views/Home";
 import About from "./Views/About";
 // import Product from "./Views/Product";
 import DeConvCam from "./Views/DeConvCam";
+import ObjectDetect from "./Views/ObjectDetect";
+
 function App() {
   return (
     <div className="relative pb-10 min-h-screen">
@@ -21,6 +23,9 @@ function App() {
             </Route>
             <Route path="/deconvcam">
               <DeConvCam />
+            </Route>
+            <Route path="/objectdetect">
+              <ObjectDetect />
             </Route>
             {/* <Route path="/products/:id">
               <Product />
