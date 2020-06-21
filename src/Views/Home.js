@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import Loader from "../Components/Loader";
+import React from "react";
+// import axios from "axios";
+// import Loader from "../Components/Loader";
 // import ProductCard from "../Components/ProductCard";
 // import { useAxiosGet } from "../Hooks/Httpsrequests";
 // import HelloWorld from "../Components/HelloWorld";
@@ -32,7 +32,7 @@ function Home() {
   // }
   return (
     <div>
-      <h1 className="font-bold text-2xl">Best Sellers</h1>
+      <h1 className="font-bold text-2xl">Feature Visualizing...</h1>
       {content}
     </div>
   );
