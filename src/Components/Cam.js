@@ -1,17 +1,29 @@
-import React from "react";
+import React, { useState, useCallback, useRef } from "react";
 import Webcam from "react-webcam";
+// import axios from "axios";
 // import { saveJobImage } from "../actions";
-// const WebcamComponent = () => <Webcam />;
 
-function Cam() {
+function Cam(props) {
+  const webcamRef = useRef(null);
+
+  const [imgSrc, setImgSrc] = useState(null);
+
+  const capture = useCallback(() => {
+    const imageSrc = webcamRef.current.getScreenshot();
+    setImgSrc(imageSrc);
+    props.onCapture(imageSrc);
+  }, [webcamRef, setImgSrc]);
   return (
     <div className="text-center border bg-white pt-20px mt-30px shadow-sm rounded-lg">
       <div className="bx--col-xs-12">
-        <Webcam width="100%" height="100%" />
+        <Webcam width="100%" height="100%" ref={webcamRef} />
       </div>
       <div className="inline-block">
         <div className="flex flex-col content-center justify-center row-auto">
-          <div className="bg-blue-500 text-white p-2 flex justify-center">
+          <div
+            className="bg-blue-500 text-white p-2 flex justify-center"
+            onClick={capture}
+          >
             Capture
           </div>
         </div>
