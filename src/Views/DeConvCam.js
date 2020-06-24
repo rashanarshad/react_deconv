@@ -23,7 +23,7 @@ function DeConvCam() {
     formData.append("file", file);
     axios({
       method: "post",
-      url: "http://127.0.0.1:8000/",
+      url: "http://127.0.0.1:7000/",
       data: formData,
       config: {
         headers: {
