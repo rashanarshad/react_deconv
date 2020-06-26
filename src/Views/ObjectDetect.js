@@ -24,6 +24,8 @@ function DeConvCam() {
     axios({
       method: "post",
       url: "https://cors-anywhere.herokuapp.com/" + "http://54.242.3.165:80",
+      // url: "http://127.0.0.1:5000",
+
       data: formData,
       config: {
         headers: {
@@ -45,11 +47,11 @@ function DeConvCam() {
     <div className="text-center flex flex-col grid">
       <h1 className="font-bold text-2xl mb-3">Object Detection</h1>
       <p>object detection view of live webcam</p>
-      <div className="flex">
+      <div className="flex content-center">
         <div className="w-1/2">
           <Cam onCapture={changeImage} />
         </div>
-        <div className="w-1/2">
+        <div className="w-1/2 content-center">
           <DeConvImg {...capturedImage} />
         </div>
       </div>

@@ -12,7 +12,7 @@ function DeConvImg(props) {
   }
 
   if (!props.loading && props.img != null) {
-    content = <img src={props.img} />;
+    content = <img src={props.img} className="object-center" />;
     // setSrc(<img src={props.img.img} />);
     // content = <h1 className="font-bold"> deconved</h1>;
     // let file = props.img.img;

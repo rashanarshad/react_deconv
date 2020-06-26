@@ -7,6 +7,7 @@ import About from "./Views/About";
 // import Product from "./Views/Product";
 import DeConvCam from "./Views/DeConvCam";
 import ObjectDetect from "./Views/ObjectDetect";
+import ImageSegmentation from "./Views/ImageSegmentation";
 
 function App() {
   return (
@@ -26,6 +27,9 @@ function App() {
             </Route>
             <Route path="/objectdetect">
               <ObjectDetect />
+            </Route>
+            <Route path="/imagesegmentation">
+              <ImageSegmentation />
             </Route>
             {/* <Route path="/products/:id">
               <Product />
