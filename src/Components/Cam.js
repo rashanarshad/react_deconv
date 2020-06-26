@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useRef } from "react";
+import React, { useCallback, useRef } from "react";
 import Webcam from "react-webcam";
 // import axios from "axios";
 // import { saveJobImage } from "../actions";
@@ -6,13 +6,10 @@ import Webcam from "react-webcam";
 function Cam(props) {
   const webcamRef = useRef(null);
 
-  const [imgSrc, setImgSrc] = useState(null);
-
   const capture = useCallback(() => {
     const imageSrc = webcamRef.current.getScreenshot();
-    setImgSrc(imageSrc);
     props.onCapture(imageSrc);
-  }, [webcamRef, setImgSrc]);
+  }, [webcamRef, props]);
   return (
     <div className="text-center border bg-white pt-20px mt-30px shadow-sm rounded-lg">
       <div className="bx--col-xs-12">

@@ -1,10 +1,9 @@
 import React from "react";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./Views/Home";
 import About from "./Views/About";
-// import Product from "./Views/Product";
 import DeConvCam from "./Views/DeConvCam";
 import ObjectDetect from "./Views/ObjectDetect";
 import ImageSegmentation from "./Views/ImageSegmentation";
@@ -31,9 +30,6 @@ function App() {
             <Route path="/imagesegmentation">
               <ImageSegmentation />
             </Route>
-            {/* <Route path="/products/:id">
-              <Product />
-            </Route> */}
           </Switch>
         </div>
         <Footer />

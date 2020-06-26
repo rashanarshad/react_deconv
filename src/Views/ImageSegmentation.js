@@ -52,8 +52,13 @@ function ImageSegmentation() {
         <div className="w-1/2 ">
           <Cam onCapture={changeImage} />
         </div>
-        <div className="w-1/2 object-none object-center">
-          <DeConvImg {...capturedImage} />
+        <div className="w-1/2 flex v-screen">
+          <div className="m-auto ">
+            <DeConvImg
+              {...capturedImage}
+              original_header="The Segmented Image will load here."
+            />
+          </div>
         </div>
       </div>
     </div>
