@@ -38,6 +38,16 @@ function NavigationMenu(props) {
         </li>
         <li>
           <Link
+            to="/imagesegmentation"
+            className="text-blue-500 py-3 border-b block"
+            onClick={props.closeMenu}
+          >
+            {" "}
+            Image Segmentation{" "}
+          </Link>
+        </li>
+        <li>
+          <Link
             to="/about"
             className="text-blue-500 py-3 border-b block"
             onClick={props.closeMenu}
