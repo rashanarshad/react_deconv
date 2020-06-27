@@ -5,13 +5,8 @@ currently, only the object detection api is live (so click the navigation menu i
 
 
 DeConvCam View Microservice/API : https://github.com/rashanarshad/deconv_api
-
-haven't added all app fast api because I'm still refactoring the underlying keras model , so capture button won't do anything yet
-but the post request is there if you want to point it to your api (which should generate an image and send back its url )  
-
-To use: 
-`yarn install`
-`yarn start`
+Instance Segmentation View Microservice/API : https://github.com/rashanarshad/instancesegmentation_api
+Object Detections View Microservice/API : https://github.com/rashanarshad/objectdetect_api
 
 
-better documentation , live view, more feature visualizations to come as I finish up the app, putting out template and keeping repo public in case anyone wants to check out the wip so far 
+Best way to run locally is to build and run docker image (and microservice docker images) and correct the url in the relevant views.
