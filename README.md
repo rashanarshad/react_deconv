@@ -1,8 +1,8 @@
 
 try it at : https://rashanarshad.com 
+
+
 currently, only the object detection api is live (so click the navigation menu in the top right and choose "object detect" from the menu)
-
-
 
 DeConvCam View Microservice/API : https://github.com/rashanarshad/deconv_api
 
