@@ -7,7 +7,7 @@ function Header() {
     <header className="border-b p-3 flex justify-between item-center">
       <Link to="/" className="font-bold">
         {" "}
-        GlimpseAI{" "}
+        Glimpse{" "}
       </Link>
 
       <Navigation />
