@@ -23,8 +23,8 @@ function DeConvCam() {
     formData.append("file", file);
     axios({
       method: "post",
-      url: "https://cors-anywhere.herokuapp.com/http://54.242.3.165:80",
-      // url: "http://127.0.0.1:5000",
+      // url: "https://cors-anywhere.herokuapp.com/http://54.242.3.165:80",
+      url: "http://54.89.237.26:80",
 
       data: formData,
       config: {

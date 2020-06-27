@@ -11,7 +11,6 @@ function ImageSegmentation() {
   });
 
   const changeImage = (dataFromChild) => {
-    // captureImage({ captured: true, img: dataFromChild });
     captureImage({
       captured: false,
       img: null,
@@ -23,8 +22,6 @@ function ImageSegmentation() {
     formData.append("file", file);
     axios({
       method: "post",
-      // url: "https://cors-anywhere.herokuapp.com/" + "http://54.242.3.165:80",
-      // url: "http://0.0.0.0:80",
       url: "http://54.197.3.40:80",
 
       data: formData,
