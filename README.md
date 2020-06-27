@@ -5,7 +5,11 @@ currently, only the object detection api is live (so click the navigation menu i
 
 
 DeConvCam View Microservice/API : https://github.com/rashanarshad/deconv_api
+
+
 Instance Segmentation View Microservice/API : https://github.com/rashanarshad/instancesegmentation_api
+
+
 Object Detections View Microservice/API : https://github.com/rashanarshad/objectdetect_api
 
 
