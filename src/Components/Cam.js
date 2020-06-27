@@ -13,7 +13,7 @@ function Cam(props) {
   return (
     <div className="text-center border bg-white pt-20px mt-30px shadow-sm rounded-lg">
       <div className="bx--col-xs-12">
-        <Webcam width="100%" height="100%" ref={webcamRef} />
+        <Webcam mirrored={true} width="100%" height="100%" ref={webcamRef} />
       </div>
       <div className="inline-block">
         <div className="flex flex-col content-center justify-center row-auto">

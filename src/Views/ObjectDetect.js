@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Cam from "../Components/Cam";
-import DeConvImg from "../Components/DeConvImg";
+import ProcessedImage from "../Components/ProcessedImage";
 import axios from "axios";
 
 function DeConvCam() {
@@ -53,7 +53,7 @@ function DeConvCam() {
         </div>
         <div className="w-1/2 flex v-screen">
           <div className="m-auto ">
-            <DeConvImg
+            <ProcessedImage
               {...capturedImage}
               original_header="An Image with predictions will load here."
             />

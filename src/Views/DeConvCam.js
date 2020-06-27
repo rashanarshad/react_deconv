@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import Cam from "../Components/Cam";
-import DeConvImg from "../Components/DeConvImg";
+import ProcessedImage from "../Components/ProcessedImage";
 import axios from "axios";
 
 function DeConvCam() {
   const [layer_list] = useState([
-    "input_1",
     "block1_conv1",
     "block1_conv2",
     "block1_pool",
@@ -30,6 +29,11 @@ function DeConvCam() {
     "predictions",
   ]);
 
+  const [selectedLayer, selectLayer] = useState("block1_conv1");
+  const handleChange = (e) => {
+    console.log(e.target.value);
+    selectLayer(e.target.value);
+  };
   const [capturedImage, captureImage] = useState({
     captured: false,
     img: null,
@@ -46,10 +50,11 @@ function DeConvCam() {
     let file = dataFromChild;
     const formData = new FormData();
     formData.append("file", file);
-    formData.append("layer", "block1_conv1");
+    console.log(selectedLayer);
+    formData.append("layer", selectedLayer);
     axios({
       method: "post",
-      url: "http://127.0.0.1:8000",
+      url: "http://54.162.45.59:80",
       data: formData,
       config: {
         headers: {
@@ -64,6 +69,7 @@ function DeConvCam() {
       .then((response) => {
         // console.log(response);
         captureImage({ captured: true, img: response.data, loading: false });
+        console.log(selectedLayer);
       })
       .catch((errors) => console.log(errors));
   };
@@ -73,7 +79,10 @@ function DeConvCam() {
       <div>
         <span className="inline-block">
           <p>deconvulational view of live webcam </p>
-          <select>
+          <select
+            value={layer_list.find((obj) => obj === selectedLayer)}
+            onChange={handleChange}
+          >
             {layer_list.map((layer) => (
               <option key={layer} value={layer}>
                 {layer}
@@ -89,7 +98,7 @@ function DeConvCam() {
         </div>
         <div className="w-1/2 flex v-screen">
           <div className="m-auto ">
-            <DeConvImg
+            <ProcessedImage
               {...capturedImage}
               original_header="The DeConv'd Image will load here."
             />

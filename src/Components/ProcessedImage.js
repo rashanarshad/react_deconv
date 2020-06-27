@@ -1,7 +1,7 @@
 import React from "react";
-import Loader from "../Components/Loader";
+import Loader from "./Loader";
 
-function DeConvImg(props) {
+function ProcessedImage(props) {
   let content = <h1 className="font-bold"> {props.original_header}</h1>;
   console.log(props);
   if (props.loading) {
@@ -14,4 +14,4 @@ function DeConvImg(props) {
   return content;
 }
 
-export default DeConvImg;
+export default ProcessedImage;
