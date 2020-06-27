@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Cam from "../Components/Cam";
-import DeConvImg from "../Components/DeConvImg";
+import ProcessedImage from "../Components/ProcessedImage";
 import axios from "axios";
 
 function DeConvCam() {
@@ -23,7 +23,7 @@ function DeConvCam() {
     formData.append("file", file);
     axios({
       method: "post",
-      url: "https://cors-anywhere.herokuapp.com/" + "http://54.242.3.165:80",
+      url: "https://cors-anywhere.herokuapp.com/http://54.242.3.165:80",
       // url: "http://127.0.0.1:5000",
 
       data: formData,
@@ -51,8 +51,13 @@ function DeConvCam() {
         <div className="w-1/2">
           <Cam onCapture={changeImage} />
         </div>
-        <div className="w-1/2 content-center">
-          <DeConvImg {...capturedImage} />
+        <div className="w-1/2 flex v-screen">
+          <div className="m-auto ">
+            <ProcessedImage
+              {...capturedImage}
+              original_header="An Image with predictions will load here."
+            />
+          </div>
         </div>
       </div>
     </div>

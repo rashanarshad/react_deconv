@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Cam from "../Components/Cam";
-import DeConvImg from "../Components/DeConvImg";
+import ProcessedImage from "../Components/ProcessedImage";
 import axios from "axios";
 
 function ImageSegmentation() {
@@ -52,8 +52,13 @@ function ImageSegmentation() {
         <div className="w-1/2 ">
           <Cam onCapture={changeImage} />
         </div>
-        <div className="w-1/2 object-none object-center">
-          <DeConvImg {...capturedImage} />
+        <div className="w-1/2 flex v-screen">
+          <div className="m-auto ">
+            <ProcessedImage
+              {...capturedImage}
+              original_header="The Segmented Image will load here."
+            />
+          </div>
         </div>
       </div>
     </div>
