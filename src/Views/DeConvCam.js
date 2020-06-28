@@ -54,14 +54,14 @@ function DeConvCam() {
     formData.append("layer", selectedLayer);
     axios({
       method: "post",
-      url: "http://54.162.45.59:80",
+      url: "https://deconv.rashanarshad.com",
       data: formData,
       config: {
         headers: {
-          "Content-Type": "multipart/form-data",
+          "Content-Type": "*",
           "Access-Control-Allow-Origin": "*",
           "Access-Control-Allow-Methods": "GET, PUT, POST, DELETE, OPTIONS",
-          "Access-Control-Allow-Headers": "Content-Type",
+          "Access-Control-Allow-Headers": "*",
           "Access-Control-Allow-Credentials": true,
         },
       },

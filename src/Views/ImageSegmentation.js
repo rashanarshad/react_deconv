@@ -22,7 +22,7 @@ function ImageSegmentation() {
     formData.append("file", file);
     axios({
       method: "post",
-      url: "http://54.197.3.40:80",
+      url: "https://segment.rashanarshad.com",
 
       data: formData,
       config: {
