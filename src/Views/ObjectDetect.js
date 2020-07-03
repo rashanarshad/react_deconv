@@ -8,7 +8,7 @@ function DeConvCam() {
     captured: false,
     img: null,
     loading: false,
-    error: null,
+    error: false,
   });
 
   const changeImage = (dataFromChild) => {
@@ -24,7 +24,8 @@ function DeConvCam() {
     formData.append("file", file);
     axios({
       method: "post",
-      url: "https://objdetect.rashanarshad.com",
+      url:
+        "https://cors-anywhere.herokuapp.com/https://objdetect.rashanarshad.com",
 
       data: formData,
       config: {
@@ -46,7 +47,7 @@ function DeConvCam() {
           captured: false,
           img: null,
           loading: false,
-          error: errors,
+          error: true,
         });
         console.log(errors);
       });

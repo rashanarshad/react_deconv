@@ -24,7 +24,7 @@ function DeConvCam() {
     captured: false,
     img: null,
     loading: false,
-    error: null,
+    error: false,
   });
 
   const changeImage = (dataFromChild) => {
@@ -33,6 +33,7 @@ function DeConvCam() {
       captured: false,
       img: null,
       loading: true,
+      error: null,
     });
     let file = dataFromChild;
     const formData = new FormData();
@@ -41,7 +42,8 @@ function DeConvCam() {
     formData.append("layer", selectedLayer);
     axios({
       method: "post",
-      url: "https://deconv.rashanarshad.com",
+      url:
+        "https://cors-anywhere.herokuapp.com/https://deconv.rashanarshad.com",
       data: formData,
       config: {
         headers: {
@@ -63,7 +65,7 @@ function DeConvCam() {
           captured: false,
           img: null,
           loading: false,
-          error: errors,
+          error: true,
         });
         console.log(errors);
       });

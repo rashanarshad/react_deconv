@@ -15,19 +15,10 @@ function ProcessedImage(props) {
   if (props.error) {
     content = (
       <div>
-        <div>
-          <h1>
-            Sorry, there was an error. Please wait a few minutes and try again,
-            or try a different mode in the meantime.
-          </h1>
-        </div>
-        <div>
-          <h1>
-            {" "}
-            For those in the know, the POST request returned an error with the
-            status: {props.error.response.status}
-          </h1>
-        </div>
+        <h1>
+          Sorry, there was an error. Please wait a few minutes and try again, or
+          try a different mode in the meantime.
+        </h1>
       </div>
     );
   }
