@@ -8,6 +8,7 @@ function ImageSegmentation() {
     captured: false,
     img: null,
     loading: false,
+    error: null,
   });
 
   const changeImage = (dataFromChild) => {
@@ -39,7 +40,15 @@ function ImageSegmentation() {
         console.log(response);
         captureImage({ captured: true, img: response.data, loading: false });
       })
-      .catch((errors) => console.log(errors));
+      .catch((errors) => {
+        captureImage({
+          captured: false,
+          img: null,
+          loading: false,
+          error: errors,
+        });
+        console.log(errors);
+      });
   };
   return (
     <div className="text-center flex flex-col grid ">

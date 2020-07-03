@@ -46,6 +46,7 @@ function NavigationMenu(props) {
             Image Segmentation{" "}
           </Link>
         </li>
+
         <li>
           <Link
             to="/about"

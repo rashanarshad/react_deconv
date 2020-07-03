@@ -13,20 +13,6 @@ function DeConvCam() {
     "block2_pool",
     "block3_conv1",
     "block3_conv2",
-    "block3_conv3",
-    "block3_pool",
-    "block4_conv1",
-    "block4_conv2",
-    "block4_conv3",
-    "block4_pool",
-    "block5_conv1",
-    "block5_conv2",
-    "block5_conv3",
-    "block5_pool",
-    "flatten",
-    "fc1",
-    "fc2",
-    "predictions",
   ]);
 
   const [selectedLayer, selectLayer] = useState("block1_conv1");
@@ -38,6 +24,7 @@ function DeConvCam() {
     captured: false,
     img: null,
     loading: false,
+    error: null,
   });
 
   const changeImage = (dataFromChild) => {
@@ -71,7 +58,15 @@ function DeConvCam() {
         captureImage({ captured: true, img: response.data, loading: false });
         console.log(selectedLayer);
       })
-      .catch((errors) => console.log(errors));
+      .catch((errors) => {
+        captureImage({
+          captured: false,
+          img: null,
+          loading: false,
+          error: errors,
+        });
+        console.log(errors);
+      });
   };
   return (
     <div className="text-center flex flex-col grid">
