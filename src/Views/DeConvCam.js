@@ -13,20 +13,6 @@ function DeConvCam() {
     "block2_pool",
     "block3_conv1",
     "block3_conv2",
-    "block3_conv3",
-    "block3_pool",
-    "block4_conv1",
-    "block4_conv2",
-    "block4_conv3",
-    "block4_pool",
-    "block5_conv1",
-    "block5_conv2",
-    "block5_conv3",
-    "block5_pool",
-    "flatten",
-    "fc1",
-    "fc2",
-    "predictions",
   ]);
 
   const [selectedLayer, selectLayer] = useState("block1_conv1");
@@ -38,6 +24,7 @@ function DeConvCam() {
     captured: false,
     img: null,
     loading: false,
+    error: false,
   });
 
   const changeImage = (dataFromChild) => {
@@ -46,6 +33,7 @@ function DeConvCam() {
       captured: false,
       img: null,
       loading: true,
+      error: null,
     });
     let file = dataFromChild;
     const formData = new FormData();
@@ -54,7 +42,8 @@ function DeConvCam() {
     formData.append("layer", selectedLayer);
     axios({
       method: "post",
-      url: "https://deconv.rashanarshad.com",
+      url:
+        "https://cors-anywhere.herokuapp.com/https://deconv.rashanarshad.com",
       data: formData,
       config: {
         headers: {
@@ -71,7 +60,15 @@ function DeConvCam() {
         captureImage({ captured: true, img: response.data, loading: false });
         console.log(selectedLayer);
       })
-      .catch((errors) => console.log(errors));
+      .catch((errors) => {
+        captureImage({
+          captured: false,
+          img: null,
+          loading: false,
+          error: true,
+        });
+        console.log(errors);
+      });
   };
   return (
     <div className="text-center flex flex-col grid">

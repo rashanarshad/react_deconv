@@ -11,6 +11,17 @@ function ProcessedImage(props) {
   if (!props.loading && props.img != null) {
     content = <img src={props.img} alt="" />;
   }
+
+  if (props.error) {
+    content = (
+      <div>
+        <h1>
+          Sorry, there was an error. Please wait a few minutes and try again, or
+          try a different mode in the meantime.
+        </h1>
+      </div>
+    );
+  }
   return content;
 }
 
